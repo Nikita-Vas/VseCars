@@ -1,0 +1,52 @@
+.order {
+  &__container {
+    @include adaptiveValue('padding-top', 70, 40, 1200, 320, 1);
+  }
+
+  &__title {
+    @include adaptiveValue('margin-bottom', 60, 30);
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, (260px));
+    gap: rem(24);
+  }
+
+  &__item {
+  }
+}
+
+.item-order {
+  padding: rem(24);
+  border-radius: 24px;
+  background: #f6f6f6;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: rem(24);
+  }
+
+  &__time {
+    border-radius: rem(58);
+    background: #ededed;
+    align-self: start;
+    padding: rem(8) rem(12);
+  }
+
+  &__title {
+    color: $mainColor;
+    font-size: rem(24);
+    font-weight: 600;
+    line-height: 109.523%; /* 26.285px */
+    letter-spacing: -0.48px;
+  }
+
+  &__text {
+  }
+
+  &__button {
+  }
+}

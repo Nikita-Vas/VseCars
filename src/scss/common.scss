@@ -1,0 +1,39 @@
+// Заголовки, общие БЄМ блоки и проче...
+
+.title {
+  font-weight: 600;
+  color: $mainColor;
+  line-height: 109.523%;
+  letter-spacing: -1.32px;
+  @include adaptiveValue('font-size', 44, 30);
+}
+
+//========================================================================================================================================================
+
+.button {
+  font-weight: 700;
+  font-size: rem(14);
+  letter-spacing: 0.05em;
+  color: $mainColor;
+  text-transform: uppercase;
+
+  padding: rem(23) rem(0);
+  background-color: $mainYellow;
+  position: relative;
+  transition: background-color 0.3s ease 0s, top 0.2s ease 0s;
+  border-radius: rem(24);
+  top: 0;
+
+  @include adaptiveValue('padding-left', 62, 30);
+  @include adaptiveValue('padding-right', 62, 30);
+
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: #ffbc2c;
+    }
+  }
+  &:active {
+    background-color: #fed781;
+    top: rem(3);
+  }
+}

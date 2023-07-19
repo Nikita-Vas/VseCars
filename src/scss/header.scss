@@ -1,0 +1,286 @@
+.header {
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.954);
+  width: 100%;
+
+  z-index: 2;
+
+  &__container {
+    padding-top: rem(16);
+    padding-bottom: rem(16);
+    display: flex;
+    align-items: center;
+
+    @media (max-width: $mobile) {
+      align-items: start;
+    }
+  }
+
+  &__column {
+    display: flex;
+    align-items: center;
+    gap: rem(40);
+    flex: 1 1 auto;
+
+    @media (max-width: $tablet) {
+      order: 2;
+      flex: 0 0 auto;
+    }
+
+    @media (max-width: $mobileSmall) {
+      justify-content: space-between;
+      gap: rem(20);
+    }
+
+    @media (max-width: rem(380)) {
+      flex: 1 1 auto;
+    }
+  }
+
+  &__logo {
+    cursor: pointer;
+  }
+
+  &__menu {
+  }
+
+  &__contacts {
+  }
+
+  &__social {
+  }
+
+  &__call {
+  }
+}
+.menu {
+  &__icon {
+  }
+
+  &__body {
+    @media (max-width: $tablet) {
+      background-color: $mainColor;
+      padding: rem(35);
+
+      color: #fff;
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+
+      transform: translateX(-100%);
+      transition: transform 0.3s ease 0s;
+
+      z-index: 10;
+
+      .menu-open & {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap: rem(16);
+
+    @media (max-width: $tablet) {
+      flex-direction: column;
+      gap: rem(50);
+    }
+
+    @media (max-width: rem(950)) {
+      font-size: rem(30);
+    }
+  }
+
+  &__item {
+  }
+
+  &__link {
+    position: relative;
+
+    @media (max-width: $tablet) {
+      color: #ffff;
+      font-size: rem(30);
+      z-index: 1;
+      padding: rem(10);
+    }
+    &::before {
+      content: '';
+      display: block;
+      background: #e2e2e2;
+      width: 100%;
+      height: 1px;
+
+      position: absolute;
+      bottom: rem(-5);
+      left: 0;
+    }
+  }
+}
+
+.menu-open {
+  .spollers__body {
+    display: none;
+  }
+}
+
+.spollers {
+  &__item {
+  }
+
+  &__title {
+  }
+}
+.menu-header {
+  &__link-list {
+  }
+}
+.link-list-header {
+  &__item {
+  }
+}
+
+.links-list {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    display: block;
+    top: -10px;
+    left: 50%;
+    width: rem(19);
+    height: rem(19);
+    transform: translateX(-50%);
+    background: url('@img/header/Pol.png') no-repeat;
+  }
+
+  &__item {
+    display: block;
+    padding: rem(8);
+    background-color: #fff;
+    border-radius: rem(7);
+    transition: background-color 0.2s ease 0s;
+    position: relative;
+    z-index: 1;
+    transform: translate3d();
+
+    &:hover {
+      background-color: #f2f2f2;
+    }
+  }
+}
+
+.contacts-header {
+  display: flex;
+  gap: rem(24);
+
+  @media (max-width: $tablet) {
+    flex: 1 1 auto;
+  }
+
+  @media (max-width: rem(380)) {
+    display: none;
+  }
+
+  &__social {
+    @media (max-width: rem(550)) {
+      display: none;
+    }
+  }
+
+  &__link {
+  }
+
+  &__call {
+  }
+}
+.contacts-call {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: rem(4);
+
+  &__phone {
+    font-size: rem(20);
+    line-height: math.div(24, 20);
+    letter-spacing: -0.02em;
+  }
+
+  &__callback {
+    font-size: 10px;
+    line-height: 12px;
+    letter-spacing: 0.06em;
+    color: #0f6fff;
+    text-transform: uppercase;
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: #0f6fff;
+      bottom: -3px;
+      left: 0;
+      position: absolute;
+    }
+  }
+}
+//====================================================================================================
+
+//====================================================================================================
+
+.icon-menu {
+  display: none;
+  @media (max-width: $tablet) {
+    display: block;
+    position: relative;
+    width: rem(30);
+    height: rem(18);
+    cursor: pointer;
+    z-index: 11;
+    span,
+    &::before,
+    &::after {
+      content: '';
+      transition: all 0.3s ease 0s;
+      right: 0;
+      position: absolute;
+      width: 100%;
+      height: rem(2);
+      background-color: #000;
+    }
+    &::before {
+      top: 0;
+    }
+    &::after {
+      bottom: 0;
+    }
+    span {
+      top: calc(50% - rem(1));
+    }
+    .menu-open & {
+      span {
+        width: 0;
+      }
+      &::before,
+      &::after {
+      }
+      &::before {
+        top: calc(50% - rem(1));
+        transform: rotate(-45deg);
+        background-color: #fff;
+      }
+      &::after {
+        bottom: calc(50% - rem(1));
+        transform: rotate(45deg);
+        background-color: #fff;
+      }
+    }
+  }
+}
