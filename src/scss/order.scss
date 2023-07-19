@@ -1,16 +1,22 @@
 .order {
+  background-color: #fcfcfc;
   &__container {
     @include adaptiveValue('padding-top', 70, 40, 1200, 320, 1);
+    @include adaptiveValue('padding-bottom', 70, 40, 1200, 320, 1);
   }
 
   &__title {
     @include adaptiveValue('margin-bottom', 60, 30);
+    user-select: none;
   }
 
   &__items {
     display: grid;
     grid-template-columns: repeat(auto-fit, (260px));
+    justify-content: center;
     gap: rem(24);
+
+    counter-reset: steps;
   }
 
   &__item {
@@ -19,8 +25,41 @@
 
 .item-order {
   padding: rem(24);
-  border-radius: 24px;
+  border-radius: rem(24);
   background: #f6f6f6;
+
+  position: relative;
+  user-select: none;
+
+  &::before {
+    content: 'Финальный этап';
+
+    font-family: Inter;
+    color: $mainColor;
+    font-size: rem(14);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: -0.28px;
+
+    padding: rem(6) rem(12);
+    border-radius: rem(124);
+    background: $mainYellow;
+
+    position: absolute;
+    top: rem(-13);
+    left: rem(15);
+
+    z-index: 1;
+  }
+
+  &:not(:last-child) {
+    &::before {
+      content: counter(steps) ' шаг';
+      counter-increment: steps;
+      background-color: $mainWhite;
+    }
+  }
 
   &__top {
     display: flex;
@@ -42,11 +81,16 @@
     font-weight: 600;
     line-height: 109.523%; /* 26.285px */
     letter-spacing: -0.48px;
+    margin-bottom: rem(12);
   }
 
   &__text {
   }
 
   &__button {
+    margin-top: rem(12);
+
+    padding: rem(24);
+    width: 100%;
   }
 }

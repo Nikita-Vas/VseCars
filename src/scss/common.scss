@@ -24,6 +24,8 @@
   border-radius: rem(24);
   top: 0;
 
+  transition: top 0.1s ease-in;
+
   @include adaptiveValue('padding-left', 62, 30);
   @include adaptiveValue('padding-right', 62, 30);
 
