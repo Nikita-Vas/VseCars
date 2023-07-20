@@ -1,0 +1,43 @@
+.about {
+  @include adaptiveValue('padding-bottom', 88, 40);
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    row-gap: rem(32);
+
+    @include adaptiveValue('column-gap', 100, 32, 1200, 320, 1);
+  }
+
+  &__top {
+    grid-column: 2 span;
+  }
+
+  &__title {
+    margin-bottom: rem(16);
+  }
+
+  &__text {
+    font-size: rem(16);
+    font-weight: 500;
+    color: #747474;
+    line-height: 150%;
+    letter-spacing: rem(-0.32);
+
+    p {
+      &:not(:last-child) {
+        margin-bottom: rem(20);
+      }
+    }
+  }
+
+  &__content {
+    @media (max-width: rem(773)) {
+      grid-column: 2 span;
+    }
+
+    .about__title {
+      font-size: rem(28);
+    }
+  }
+}

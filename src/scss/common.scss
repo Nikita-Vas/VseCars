@@ -38,4 +38,24 @@
     background-color: #fed781;
     top: rem(3);
   }
+
+  &--blue {
+    background-color: #3e6ade;
+    color: $mainWhite;
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: #255cf3;
+      }
+    }
+    &:active {
+      background-color: #fed781;
+      top: rem(3);
+    }
+  }
+
+  &--white {
+    background-color: $mainWhite;
+    border: rem(1) solid #ffdd2c;
+  }
 }
